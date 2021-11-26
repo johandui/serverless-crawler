@@ -1,4 +1,4 @@
-# Serverless Boilerplate
+# Serverless Crawler
 
 [![FIBO Logo](https://fibo.cloud/assets/images/logo.svg)](https://fibo.cloud/)
 
