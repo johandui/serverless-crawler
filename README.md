@@ -2,7 +2,7 @@
 
 [![FIBO Logo](https://fibo.cloud/assets/images/logo.svg)](https://fibo.cloud/)
 
-Serverless Boilerplate [Infrastructure + Services]
+Serverless Crawler [Temptate]
 ## Суулгах зүйлс
 
 1. [Аккоунт үүсгэх](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
