@@ -11,6 +11,20 @@ exports.handler = async (event, context) => {
   let browser = null;
 
   try {
+    browser = await chromium.puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    });
+
+    let page = await browser.newPage();
+    await page.setUserAgent(agent);
+
+    console.log("Navigating to page: ", pageURL);
+
+    await page.goto(pageURL);
   } catch (error) {
     console.log(error);
   } finally {
