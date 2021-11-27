@@ -25,6 +25,22 @@ exports.handler = async (event, context) => {
     console.log("Navigating to page: ", pageURL);
 
     await page.goto(pageURL);
+    const buffer = await page.screenshot();
+    result = await page.title();
+
+    const s3result = await s3
+      .upload({
+        Bucket: process.env.S3_BUCKET,
+        Key: `${Date.now()}.png`,
+        Body: buffer,
+        ContentType: "image/png",
+        ACL: "public-read",
+      })
+      .promise();
+
+
+    await page.close();
+    await browser.close();
   } catch (error) {
     console.log(error);
   } finally {
